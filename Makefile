@@ -16,7 +16,7 @@ PREF_SRC = ./src/
 SRC = $(wildcard $(PREF_SRC)*.cpp)
 OBJ = $(patsubst $(PREF_SRC)%.cpp, $(PREF_OBJ)%.o, $(SRC))
 
-all : $(TARGET)
+all : $(TARGET) run
 
 $(TARGET) : $(OBJ) 
 	$(CC) $(OBJ) -o $(TARGET).exe
@@ -26,5 +26,8 @@ $(PREF_OBJ)%.o : $(PREF_SRC)%.cpp
 
 clean: 
 	rm $(TARGET).exe $(PREF_OBJ)*.o
+
+run:
+	./List.exe
 
 
