@@ -16,7 +16,7 @@ PREF_SRC = ./src/
 SRC = $(wildcard $(PREF_SRC)*.cpp)
 OBJ = $(patsubst $(PREF_SRC)%.cpp, $(PREF_OBJ)%.o, $(SRC))
 
-all : $(TARGET) run
+all : $(TARGET) clean_dump run
 
 $(TARGET) : $(OBJ) 
 	$(CC) $(OBJ) -o $(TARGET).exe
@@ -29,5 +29,8 @@ clean:
 
 run:
 	$(EXE_FLAG) ./List.exe
+
+clean_dump:
+	rm list_dump_file.txt
 
 

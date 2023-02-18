@@ -18,7 +18,7 @@
 
 
 typedef int list_type;       // type of the list's element
-const size_t LIST_SIZE = 15; // the number of elements in the list
+const size_t LIST_SIZE = 10; // the number of elements in the list
 
 typedef struct list
 {
@@ -86,7 +86,9 @@ void list_delete(list* list, size_t elem_id);
 
 void list_add(list* list, size_t elem_id, list_type val);
 
-size_t search_free(list* list);
+void search_free(list* list);
+
+void logic(list* list);
 
 
 #endif
