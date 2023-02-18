@@ -28,6 +28,6 @@ clean:
 	rm $(TARGET).exe $(PREF_OBJ)*.o
 
 run:
-	./List.exe
+	$(EXE_FLAG) ./List.exe
 
 
