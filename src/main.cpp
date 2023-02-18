@@ -14,6 +14,9 @@ int main()
     list_add(&list, 13, 50);
     list_dump(&list);
 
+    list_delete(&list, 1);
+    list_dump(&list);
+
     list_dtor(&list);
 
 

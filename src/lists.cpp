@@ -24,8 +24,12 @@ void list_add(list* list, size_t elem_id, list_type val)
 
 void list_delete(list* list, size_t elem_id)
 {
-
-
+    list->list_elem_arr[elem_id] = -1;
+    size_t index_to_del = list->list_next_arr[elem_id];
+    size_t new_next = list->list_next_arr[index_to_del];
+    list->list_next_arr[index_to_del] = -1;
+    list->list_next_arr[elem_id] = new_next;
+    list->list_elem_arr[index_to_del] = -1;
 }
 
 size_t search_free(list* list)
