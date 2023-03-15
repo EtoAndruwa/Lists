@@ -5,7 +5,7 @@ CFLAGS = -g -c -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal 
 		 -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing \
 		 -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -Werror=vla -D_DEBUG -D_EJUDGE_CLIENT_SIDE
 
-EXE_FLAG = valgrind -s --leak-check=yes --show-leak-kinds=all --log-file="valgrind_log.txt"
+EXE_FLAG = valgrind -s --leak-check=yes --show-leak-kinds=all --log-file="./logs/valgrind_log.txt" 
 
 CC = g++
 TARGET = List
@@ -16,7 +16,7 @@ PREF_SRC = ./src/
 SRC = $(wildcard $(PREF_SRC)*.cpp)
 OBJ = $(patsubst $(PREF_SRC)%.cpp, $(PREF_OBJ)%.o, $(SRC))
 
-all : $(TARGET) clean_dump run
+all : $(TARGET) run
 
 $(TARGET) : $(OBJ) 
 	$(CC) $(OBJ) -o $(TARGET).exe
